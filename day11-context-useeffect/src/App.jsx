@@ -1,0 +1,44 @@
+import React,{useState,useEffect,useContext} from 'react';
+import Home from './components/Home';
+import About from './components/About';
+import Contect from './components/Contect';
+import { ContextProvider, MyStore } from "./context/MyContext";
+
+import axios from "axios";
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [toggle, setToggle] = useState(true);
+  const [apiData, setApiData] = useState(null);
+  console.log("apidata", apiData);
+
+  let getData = async () => {
+    let res = await axios.get("https://fakestoreapi.com/products");
+
+    setApiData(res.data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return (
+    <div>
+      <h1>Count is {count}</h1>
+
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setToggle((prev) => !prev)}>
+        Change toggle state
+      </button>
+
+      {/* <ContextProvider>
+        <Home />
+        <About />
+      </ContextProvider> */}
+
+      {toggle ? <Contect /> : <About />}
+    </div>
+  );
+};
+
+export default App;
