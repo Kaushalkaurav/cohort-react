@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-   <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-indigo-950 to-black">
+   <section className="relative min-h-screen overflow-hidden  from-slate-950 via-indigo-950 to-black">
 
 {/* Animated background */}
 
