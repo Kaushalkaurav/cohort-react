@@ -12,7 +12,7 @@ const Regester = ( { setToggle }) => {
     console.log (formData);
  };
   return (
-        <div className="bg-white p-8 rounded shadow w-90 p-6 rounded-xl flex flex-col gap-4">
+       <div className="bg-white p-8 rounded-xl shadow w-90 flex flex-col gap-4">
     <h1 className="text-2xl font-bold text-center"> Regester </h1>
   <form  onSubmit={handleSubmit} className="flex flex-col gap-4"> 
     <input  name = "name" onChange={handleChange} className="p-2 border border-gray-300 rounded" type="text"  placeholder="Name" />
